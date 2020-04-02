@@ -17,7 +17,7 @@ nodo *arbol = NULL;
 void menu();
  
 
-void insertarNodo(nodo *&, int,nodo *);		//gg
+void insertarNodo(nodo *&, int,nodo *);		
 void mostrarArbol(nodo*, int);
 bool busqueda(nodo *, int);
 
@@ -25,12 +25,12 @@ void preOrden(nodo *);
 void inOrden(nodo *);
 void postOrden(nodo *);
 
-void eliminar(nodo *, int);		//gg
+void eliminar(nodo *, int);		
 void eliminarNodo(nodo *);
-nodo *crearNodo(int, nodo *);	//gg
-nodo *minimo(nodo *);	//gg
-void reemplazar(nodo *, nodo *);	//gg
-void destruir(nodo *);		//gg
+nodo *crearNodo(int, nodo *);	
+nodo *minimo(nodo *);	
+void reemplazar(nodo *, nodo *);	
+void destruir(nodo *);		
 
 
 //MAIN
@@ -122,7 +122,7 @@ void menu() {
 
 
 //---------Funcíón Insertar Nodo---------
-void insertarNodo(nodo *&arbol, int n,nodo *padre){		//gg
+void insertarNodo(nodo *&arbol, int n,nodo *padre){
 	if (arbol == NULL){
 		nodo *nuevoNodo = crearNodo(n,padre);
 		arbol = nuevoNodo;
@@ -215,7 +215,7 @@ void postOrden(nodo *arbol) {
 /*********************ELIMINAR*****************
 */
 
-nodo *crearNodo(int n, nodo *padre) {	//gg
+nodo *crearNodo(int n, nodo *padre) {	
 	nodo *nuevoNodo = new nodo();
 
 	nuevoNodo->dato = n;
@@ -226,7 +226,7 @@ nodo *crearNodo(int n, nodo *padre) {	//gg
 	return nuevoNodo;
 }
 
-void eliminar(nodo *arbol, int n)	//gg
+void eliminar(nodo *arbol, int n)
 {
 	if (arbol == NULL) {
 		return;
@@ -256,7 +256,7 @@ nodo *minimo(nodo *arbol) {
 	}
 }
 
-//Función para reemplazar 2 nodos (CASO---> 3)	--corregido ==
+//Función para reemplazar 2 nodos (CASO---> 3)
 void reemplazar(nodo *arbol, nodo *nuevoNodo) {
 	if (arbol->padre) {
 		if (arbol->dato == arbol->padre->izq->dato) {
@@ -273,7 +273,7 @@ void reemplazar(nodo *arbol, nodo *nuevoNodo) {
 
 }
 
-//Función para destruir un nodo					se llama destruir ---->
+//Función para destruir un nodo		
 void destruir(nodo *nodo) {
 	nodo->izq = NULL;
 	nodo->der = NULL;
